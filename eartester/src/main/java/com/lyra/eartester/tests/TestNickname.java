@@ -7,11 +7,6 @@ import java.io.File;
 import org.junit.Test;
 
 import com.lyra.eartrainer.model.Nickname;
-import com.lyra.eartrainer.model.factory.LyraAbstractFactory;
-import com.lyra.eartrainer.model.factory.LyraFactoryCreator;
-import com.lyra.eartrainer.model.globals.ScaleTypes;
-import com.lyra.eartrainer.model.instrument.IMusicInstrument;
-import com.lyra.eartrainer.model.instrument.MusicInfo;
 
 public class TestNickname {
 	
@@ -49,7 +44,7 @@ public class TestNickname {
     */
 	
 	@Test
-	public void testCaseNickExists() {
+	public void TestNickExists() {
 		Nickname nickname = new Nickname();
 		String name = "Jeff";
 		File parentDir = new File("C:/");
