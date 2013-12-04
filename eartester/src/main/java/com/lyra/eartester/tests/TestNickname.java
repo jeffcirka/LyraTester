@@ -7,12 +7,26 @@ import static org.junit.Assert.fail;
 import java.io.File;
 import java.io.FileOutputStream;
 
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.lyra.eartrainer.model.Nickname;
 
 public class TestNickname {
 	//testing the correctness of the nickExists method
+	
+	//deleting the nickname.txt file if it already exists
+	//this will only execute once before the first test executes below
+	@BeforeClass
+	public static void deleteNick(){
+		File nickFile  = new File("C:/nickname.txt");
+		try {
+			if(nickFile.exists()) nickFile.delete();
+		}
+		catch(Exception e){
+			fail("Unexpected Exception" + e.getMessage());
+		}
+	}
 
 	//scenario1 - Checking if nickname exists before one was ever created
 	@Test
